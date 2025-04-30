@@ -7,7 +7,14 @@ exports.details = function (req, res) {
 };
 
 exports.add = function (req, res) {
-  res.send({type: 'POST'});
+console.log('Você fez um requerimento POST : ', req.body);
+  res.send({
+   type: 'POST',
+   nome: req.body.nome,
+   email: req.body.email,
+   telefone: req.body.telefone,
+   senha: req.body.senha      
+    });
 };
 
 exports.update = function (req, res) {
