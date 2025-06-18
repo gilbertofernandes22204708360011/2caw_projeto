@@ -1,33 +1,45 @@
 const Cliente = require("../models/ClienteModel");
+const Produto = require("../models/ProdutoModel");
+const Pedido = require("../models/PedidoModel");
 
 
-exports.test = function (req, res) {
-  res.send('Olá! Teste ao Controller');
-};
-
-exports.details = function (req, res) {
-  res.send({type: 'GET'});
-};
-
-exports.add = function (req, res) {
-console.log('Você fez um requerimento POST : ', req.body);
-  res.send({
-   type: 'POST',
-   nome: req.body.nome,
-   email: req.body.email,
-   telefone: req.body.telefone,
-   senha: req.body.senha      
-    });
-};
-
-exports.update = function (req, res) {
-  res.send({type: 'PUT'});
-};
-
-exports.delete = function (req, res) {
-  res.send({type: 'DELETE'});
-};
-
-exports.create = function (req, res,next) {
+exports.create_cliente = function (req, res,next) {
     Cliente.create(req.body).then(function(cliente){res.send(cliente)}).catch(next);
 }
+
+exports.create_pedido = function (req, res,next) {
+    Pedido.create(req.body).then(function(pedido){res.send(pedido)}).catch(next);
+}
+exports.create_produto = function (req, res,next) {
+    Produto.create(req.body).then(function(produto){res.send(produto)}).catch(next);
+}
+exports.update_pedido = function (req, res, next) {
+  Pedido.findByIdAndUpdate({_id: req.params.id},
+      req.body).then(function(){
+    res.redirect('/api/listall');
+}).catch(next);
+};
+
+exports.update_cliente = function (req, res, next) {
+  Cliente.findByIdAndUpdate({_id: req.params.id},
+      req.body).then(function(){
+    res.redirect('/api/listall');
+}).catch(next);
+};
+
+exports.update_produto= function (req, res, next) {
+  Produto.findByIdAndUpdate({_id: req.params.id},
+      req.body).then(function(){
+    res.redirect('/api/listall');
+}).catch(next);
+};
+
+
+exports.login= function (req, res, next) {
+  Cliente.findByIdAndUpdate({_id: req.params.id},
+      req.body).then(function(){
+    res.redirect('/api/listall');
+}).catch(next);
+};
+
+
