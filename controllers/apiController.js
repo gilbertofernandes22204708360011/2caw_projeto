@@ -1,3 +1,6 @@
+const Cliente = require("../models/ClienteModel");
+
+
 exports.test = function (req, res) {
   res.send('Olá! Teste ao Controller');
 };
@@ -25,4 +28,6 @@ exports.delete = function (req, res) {
   res.send({type: 'DELETE'});
 };
 
-const Cliente = require("../models/ClienteModel");
+exports.create = function (req, res) {
+    Cliente.create(req.body).then(function(cliente){res.send(cliente)})
+}
