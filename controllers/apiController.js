@@ -28,6 +28,6 @@ exports.delete = function (req, res) {
   res.send({type: 'DELETE'});
 };
 
-exports.create = function (req, res) {
-    Cliente.create(req.body).then(function(cliente){res.send(cliente)})
+exports.create = function (req, res,next) {
+    Cliente.create(req.body).then(function(cliente){res.send(cliente)}).catch(next);
 }
