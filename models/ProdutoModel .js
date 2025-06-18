@@ -1,29 +1,25 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const ClienteSchema = new Schema(
+const ProdutoSchema = new Schema(
     {
         nome:{
             type:String;
             required: [true,"Campo obrigatório"]
         },
-        email:{
+        detalhe:{
             type:String;
             required: [true,"Campo obrigatório"]
         },
-        telefone:{
-            type:String;
+        preco:{
+            type:Float64Array;
             required: [true,"Campo obrigatório"]
-        },
-        senha:{
-            type:String;
-            required: [true,"Campo obrigatório"]
-        },
+        }
       
     }
 );
 
-const Cliente = mongoose.model("Cliente",ClienteSchema);
+const Produto = mongoose.model("Produto",ProdutoSchema);
 
-module.exports = Cliente;
+module.exports = Produto;
 
