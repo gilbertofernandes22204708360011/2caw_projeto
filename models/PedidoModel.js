@@ -7,31 +7,31 @@ const Cliente = ClienteModel.Cliente;
 const PedidoSchema = new Schema(
     {
         produtos:{
-            type:Array;
+            type:Array,
             required: [true,"Campo obrigatório"]
 
         },
         cliente:{
-            type:Cliente;
+            type:Cliente,
             required: [true,"Campo obrigatório"]
 
         },
         data_retirada:{
-            type:Date;
+            type:Date,
             required: [true,"Campo obrigatório"]
         },
         valor_total:{
-            type:Float64Array;
+            type:Float64Array,
             required: [true,"Campo obrigatório"]
         },
         
         forma_pagamento:{
-            type:String;
+            type:String,
             required: [true,"Campo obrigatório"]
        },
         
         status_pedido:{
-            type:String;
+            type:String,
             required: [true,"Campo obrigatório"]
         }
       

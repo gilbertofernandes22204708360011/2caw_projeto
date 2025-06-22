@@ -4,19 +4,19 @@ const Schema = mongoose.Schema;
 const ClienteSchema = new Schema(
     {
         nome:{
-            type:String;
+            type:String,
             required: [true,"Campo obrigatório"]
         },
         email:{
-            type:String;
+            type:String,
             required: [true,"Campo obrigatório"]
         },
         telefone:{
-            type:String;
+            type:String,
             required: [true,"Campo obrigatório"]
         },
         senha:{
-            type:String;
+            type:String,
             required: [true,"Campo obrigatório"]
         },
       
