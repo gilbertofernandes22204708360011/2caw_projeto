@@ -1,5 +1,5 @@
 const Cliente = require("../models/ClienteModel");
-const Produto = require("../models/ProdutoModel");
+const Produto = require("../models/ProdutoModel")
 const Pedido = require("../models/PedidoModel");
 
 

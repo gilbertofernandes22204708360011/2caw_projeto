@@ -4,15 +4,15 @@ const Schema = mongoose.Schema;
 const ProdutoSchema = new Schema(
     {
         nome:{
-            type:String;
+            type:String,
             required: [true,"Campo obrigatório"]
         },
         detalhe:{
-            type:String;
+            type:String,
             required: [true,"Campo obrigatório"]
         },
         preco:{
-            type:Float64Array;
+            type:Number,
             required: [true,"Campo obrigatório"]
         }
       

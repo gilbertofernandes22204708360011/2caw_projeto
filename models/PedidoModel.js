@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const ClienteModel = require("./ClienteModel");
-const Cliente = ClienteModel.Cliente; 
+
 
 const PedidoSchema = new Schema(
     {
@@ -12,7 +11,7 @@ const PedidoSchema = new Schema(
 
         },
         cliente:{
-            type:Cliente,
+            type:String,
             required: [true,"Campo obrigatório"]
 
         },
@@ -21,7 +20,7 @@ const PedidoSchema = new Schema(
             required: [true,"Campo obrigatório"]
         },
         valor_total:{
-            type:Float64Array,
+            type:Number,
             required: [true,"Campo obrigatório"]
         },
         
